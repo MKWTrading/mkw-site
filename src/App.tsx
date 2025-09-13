@@ -1,7 +1,7 @@
 
 import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
-import { Rocket, DollarSign, Gauge, TrendingUp, BookOpen, Tool, MessageSquare, Check } from 'lucide-react';
+import { Rocket, DollarSign, Gauge, TrendingUp, BookOpen, Wrench, MessageSquare, Check } from 'lucide-react';
 import { Card, CardHeader, CardContent, CardFooter, Button, Badge, Tabs } from './ui/primitives';
 
 function useHashRoute(defaultRoute:string='home'){ 
@@ -19,7 +19,6 @@ export default function App(){
 
   return (
     <main className="text-slate-900">
-      {/* Header */}
       <header className="sticky top-0 z-40 backdrop-blur bg-white/70 border-b border-slate-200">
         <div className="max-w-6xl mx-auto px-4 md:px-8 h-16 flex items-center justify-between">
           <div className="font-extrabold tracking-tight text-lg">MKW <span className="text-slate-500">Consulting</span></div>
@@ -37,7 +36,6 @@ export default function App(){
         </div>
       </header>
 
-      {/* Hero */}
       <section className="relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900"></div>
         <div className="absolute inset-0 opacity-20 [mask-image:radial-gradient(white,transparent_70%)]" 
@@ -75,14 +73,13 @@ export default function App(){
         </div>
       </section>
 
-      {/* Services */}
       <section id="services" className="max-w-6xl mx-auto px-4 md:px-8 py-16">
         <h2 className="text-2xl md:text-3xl font-bold tracking-tight">What We Do</h2>
         <p className="text-slate-600 mt-2">Practical help for real results—no fluff.</p>
         <div className="grid md:grid-cols-3 gap-6 mt-8">
           {[
             {title:'Prop-Firm Evaluation Coaching', desc:'Targeted prep to align your plan to each firm’s rules and risk. Get structured checklists, daily routines, and performance feedback.', icon:BookOpen},
-            {title:'Custom NinjaTrader Tools', desc:'Indicators, WPF overlays, and strategy dashboards tailored to your workflow. Built with NT8 best practices and clean UI.', icon:Tool},
+            {title:'Custom NinjaTrader Tools', desc:'Indicators, WPF overlays, and strategy dashboards tailored to your workflow. Built with NT8 best practices and clean UI.', icon:Wrench},
             {title:'Trade Plan & Discipline Systems', desc:'Operationalize your plan with checklists, guardrails, and stats visibility so execution stays consistent under pressure.', icon:Gauge},
           ].map((s, idx)=>(
             <Card key={idx}>
@@ -99,7 +96,6 @@ export default function App(){
         </div>
       </section>
 
-      {/* Prop-Firm callouts */}
       <section id="prop-firm" className="bg-slate-50 border-y border-slate-200 py-16">
         <div className="max-w-6xl mx-auto px-4 md:px-8">
           <h2 className="text-2xl md:text-3xl font-bold tracking-tight">Why Traders Use Prop Firms</h2>
@@ -116,7 +112,6 @@ export default function App(){
         </div>
       </section>
 
-      {/* Indicators */}
       <section id="indicators" className="max-w-6xl mx-auto px-4 md:px-8 py-16">
         <h2 className="text-2xl md:text-3xl font-bold tracking-tight">Custom Indicators & Overlays</h2>
         <p className="text-slate-600 mt-2">From order-flow zones to draggable WPF panels, we ship clean, well-documented NinjaScript.</p>
@@ -135,7 +130,6 @@ export default function App(){
         </div>
       </section>
 
-      {/* Testimonials */}
       <section className="bg-white border-t border-slate-200 py-16">
         <div className="max-w-6xl mx-auto px-4 md:px-8">
           <h2 className="text-2xl md:text-3xl font-bold tracking-tight">What Traders Say</h2>
@@ -151,7 +145,6 @@ export default function App(){
         </div>
       </section>
 
-      {/* Contact */}
       <section id="contact" className="bg-slate-900 text-white py-16">
         <div className="max-w-6xl mx-auto px-4 md:px-8">
           <h2 className="text-2xl md:text-3xl font-bold tracking-tight">Book a Free Discovery Call</h2>
@@ -165,7 +158,6 @@ export default function App(){
         </div>
       </section>
 
-      {/* Footer */}
       <footer className="bg-slate-950 text-white py-10 px-4 md:px-8">
         <div className="max-w-6xl mx-auto grid md:grid-cols-4 gap-8">
           <div>
