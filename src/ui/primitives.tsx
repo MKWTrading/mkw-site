@@ -3,7 +3,6 @@ import React from 'react'
 export const Card: React.FC<React.HTMLAttributes<HTMLDivElement>> = ({ className='', children, ...props }) => (
   <div className={`rounded-2xl border bg-white shadow-sm ${className}`} {...props}>{children}</div>
 );
-
 export const CardHeader: React.FC<React.HTMLAttributes<HTMLDivElement>> = ({ className='', children, ...props }) => (
   <div className={`p-6 border-b ${className}`} {...props}>{children}</div>
 );
@@ -29,7 +28,6 @@ export const Badge: React.FC<React.HTMLAttributes<HTMLSpanElement>> = ({ classNa
   <span className={`inline-flex items-center rounded-full px-2 py-0.5 text-xs font-semibold bg-slate-100 text-slate-700 ${className}`} {...props}>{children}</span>
 );
 
-// Basic Tabs
 export function Tabs({ tabs, current, onChange }: { tabs: { id:string, label:string }[], current: string, onChange: (id:string)=>void }){
   return (
     <div>

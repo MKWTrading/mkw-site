@@ -3,7 +3,6 @@ import { motion } from 'framer-motion';
 import { LineChart, DollarSign, Rocket, BookOpen, Cpu, ArrowRight, Mail, Phone, MapPin, Star, ShieldCheck, TrendingUp, Gauge, Building2, Check } from 'lucide-react';
 import { Card, CardHeader, CardContent, CardFooter, Button, Badge, Tabs } from './ui/primitives';
 
-// simple hash router
 function useHashRoute(defaultRoute:string='home'){ 
   const [route, setRoute] = useState<string>(window.location.hash.replace('#','') || defaultRoute);
   useEffect(()=>{ 
@@ -121,7 +120,6 @@ export default function App(){
   const { route } = useHashRoute('home');
   return (
     <div className="min-h-screen bg-slate-50 text-slate-900">
-      {/* Nav */}
       <div className="bg-slate-900 text-white">
         <div className="max-w-6xl mx-auto flex items-center justify-between py-3 px-4 md:px-8">
           <div className="flex items-center gap-2">
@@ -131,13 +129,12 @@ export default function App(){
           <nav className="flex gap-4">
             <NavLink to="home" label="Home" route={route} />
             <NavLink to="blog" label="Blog" route={route} />
-            <NavLink to "sales" label="Sales" route={route} />
+            <NavLink to="sales" label="Sales" route={route} />
             <NavLink to="contact" label="Contact" route={route} />
           </nav>
         </div>
       </div>
 
-      {/* Landing */}
       <Section id="home" className="bg-gradient-to-b from-indigo-600 to-indigo-700 text-white">
         <div className="max-w-6xl mx-auto grid lg:grid-cols-2 gap-10 items-center">
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>
@@ -177,7 +174,6 @@ export default function App(){
         </div>
       </Section>
 
-      {/* Sales */}
       <Section id="sales" className="bg-white">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-10">
@@ -199,7 +195,6 @@ export default function App(){
         </div>
       </Section>
 
-      {/* Blog */}
       <Section id="blog" className="bg-slate-50">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-10">
@@ -211,7 +206,6 @@ export default function App(){
         </div>
       </Section>
 
-      {/* Contact */}
       <Section id="contact" className="bg-white">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-6">
@@ -246,7 +240,6 @@ export default function App(){
   )
 }
 
-// Blog tabs implementation
 function BlogTabs(){
   const [tab, setTab] = useState<'latest'|'risk'|'prop'>('latest');
   const tabs = [
@@ -283,20 +276,3 @@ function BlogTabs(){
     </div>
   )
 }
-
-// small helpers
-function NavLink(props:{to:string,label:string,route:string}){ return (
-  <a href={`#${props.to}`} className={`text-sm font-medium hover:opacity-80 transition ${props.route===props.to?'text-white':'text-white/80'}`}>{props.label}</a>
-)}
-function Section({id,className='',children}:{id:string,className?:string,children:any}){ return (
-  <section id={id} className={`py-16 px-4 md:px-8 ${className}`}>{children}</section>
-)}
-function Feature({Icon,title,desc}:{Icon:any,title:string,desc:string}){ return (
-  <div className="flex gap-4 items-start">
-    <div className="p-3 rounded-2xl bg-white/10 backdrop-blur"><Icon className="w-6 h-6 text-white" /></div>
-    <div>
-      <h4 className="font-semibold text-white mb-1">{title}</h4>
-      <p className="text-white/80 text-sm leading-relaxed">{desc}</p>
-    </div>
-  </div>
-)}
