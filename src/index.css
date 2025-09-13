@@ -2,3 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 html { scroll-behavior: smooth; }
+
+
+/* MKW additions */
+:focus-visible { outline: 3px solid #22d3ee; outline-offset: 2px; }
+a { text-underline-offset: 2px; }

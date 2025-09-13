@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://mkwtrading.com/sitemap.xml
